@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPowerOfFour(int n) {
+    if (n <= 0) return false;
+    while (n % 4 == 0) {
+        n /= 4;
+    }
+    return n == 1;
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (isPowerOfFour(n)) {
+        printf("%d is a power of 4\n", n);
+    } else {
+        printf("%d is NOT a power of 4\n", n);
+    }
+
+    return 0;
+}
