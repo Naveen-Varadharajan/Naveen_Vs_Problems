@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String str = scan.nextLine().toLowerCase(); 
+
+        int a = 0, e = 0, i = 0, o = 0, u = 0;
+
+        for (int idx = 0; idx < str.length(); idx++) {
+            char c = str.charAt(idx);
+            switch (c) {
+                case 'a': a++; break;
+                case 'e': e++; break;
+                case 'i': i++; break;
+                case 'o': o++; break;
+                case 'u': u++; break;
+            }
+        }
+
+        if (a % 2 == 0 && e % 2 == 0 && i % 2 == 0 && o % 2 == 0 && u % 2 == 0) {
+            System.out.println("HAPPY");
+        } else {
+            System.out.println("NOT HAPPY");
+        }
+    }
+}

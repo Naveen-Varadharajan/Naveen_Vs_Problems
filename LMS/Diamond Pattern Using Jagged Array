@@ -1,0 +1,53 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        
+        //upper
+        char pa1[][]=new char[r][];
+        
+        for(int i=0;i<r;i++){
+            pa1[i]=new char[r+i];
+            
+            for(int k=0;k<pa1[i].length;k++){
+                if(k<r-i-1){
+                    pa1[i][k]=' ';
+                }
+                else{
+                    pa1[i][k]='*';
+                }
+            }
+        }
+        
+        // lower
+        char pa2[][]=new char[r-1][];
+
+        for(int i=0;i<pa2.length;i++){
+            pa2[i]=new char[(r-1)+(r-1-i)];
+
+            for(int j=0;j<pa2[i].length;j++){
+                if (j<i+1){
+                    pa2[i][j]=' ';
+                }else{
+                    pa2[i][j]='*';
+                }
+            }
+        }
+
+        //up print
+        for(int i=0;i<pa1.length;i++){
+            for(int j=0;j<pa1[i].length;j++){
+                System.out.print(pa1[i][j]);
+            }
+            System.out.println();
+        }
+        //low print
+        for(int i=0;i<pa2.length;i++){
+            for(int j=0;j<pa2[i].length;j++){
+                System.out.print(pa2[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}

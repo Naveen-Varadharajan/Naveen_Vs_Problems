@@ -1,0 +1,13 @@
+import json
+def fun(n_list,dep):
+    tot=0
+    for i in n_list:
+        if isinstance(i,list):
+            tot+=fun(i,dep+1)
+        else:
+            tot+=i*dep
+            
+    return tot
+                
+n_list = json.loads(input())
+print(fun(n_list,1))

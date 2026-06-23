@@ -1,0 +1,19 @@
+import re
+
+t = int(input())
+
+for _ in range(t):
+    s = input()
+
+    nums = re.findall(r'\d+', s)
+
+    ans = []
+
+    for num in nums:
+        if '9' not in num:
+            ans.append(num)
+
+    if ans:
+        print(*ans)
+    else:
+        print(-1)
